@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+#game-title {
+    background-color: #7AAFC6;
+    font-family: Anton, sans-serif;
+    font-size: 200%;
+    color: #314756;
+    letter-spacing: 6px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
