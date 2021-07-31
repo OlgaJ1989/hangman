@@ -8,12 +8,52 @@
 }
 
 #game-title {
-    background-color: #7AAFC6;
+    background-color: #22718F;
     font-family: Anton, sans-serif;
     font-size: 200%;
-    color: #314756;
+    color: #7AAFC6;
     letter-spacing: 6px;
     height: auto;
     width: 100%;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+#main-area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #7AAFC6;
+    height: auto;
+    width: 100%;
+
+}
+
+#game-area {    
+    border-radius: 25px;
+    padding: 20px;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #22718F;
+}
+
+footer p {
+    background-color: #22718F;
+    font-family: Anton, sans-serif;
+    font-size: 200%;
+    color: #7AAFC6;
+    letter-spacing: 6px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+}
+
