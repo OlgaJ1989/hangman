@@ -23,12 +23,39 @@ let score = 0;
 
 function makeGame() {
     moveSnake();
+    let result = isGameOver();
+    if(result) {
+        return;
+    }
     clearBoard();
     checkFoodCollision();
     drawFood();
     drawSnake();
     addScore();
     setTimeout(makeGame, 1000 / snakeSpeed);
+}
+
+function isGameOver() {
+    let gameOver = false;
+    //walls
+    if(headX < 0) {
+        gameOver = true;
+    }
+    else if(headX >= tileCount) {
+        gameOver = true;
+    }
+    else if(headY <0) {
+        gameOver = true;
+    }
+    else if(headY >= tileCount) {
+        gameOver=true;
+    }
+    if(gameOver) {
+        ctx.fillStyle = 'yellow';
+        ctx.font = '65px Anton';
+        ctx.fillText('Game Over!', canvas.width / 6.5, canvas.height / 2);
+    }
+    return gameOver;
 }
 
 function addScore() {
