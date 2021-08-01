@@ -35,6 +35,13 @@ function makeGame() {
     drawSnake();
     addScore();
 
+/*
+if (score % 10 = 0)
+{
+    snakeSpeed += 5;
+}
+*/
+
     if(score > 10) {
         snakeSpeed = 10;
     }
@@ -134,17 +141,20 @@ function checkFoodCollision() {
 function moveSnake() {
     headX = headX + xVelocity;
     headY = headY + yVelocity;
+    
 }
 
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
+    
     //up
     if (event.keyCode == 38) {
         if (yVelocity == 1)
             return;
         yVelocity = -1;
         xVelocity = 0;
+        keyYes = 0;
     }
     //right
     if (event.keyCode == 39) {
@@ -152,6 +162,7 @@ function keyDown(event) {
             return;
         yVelocity = 0;
         xVelocity = 1;
+        keyYes = 0;
     }
     //left
     if (event.keyCode == 37) {
@@ -159,6 +170,7 @@ function keyDown(event) {
             return;
         yVelocity = 0;
         xVelocity = -1;
+        keyYes = 0;
     }
     //down
     if (event.keyCode == 40) {
@@ -166,7 +178,9 @@ function keyDown(event) {
             return;
         yVelocity = 1;
         xVelocity = 0;
+        keyYes = 0;
     }
+
 }
 
 makeGame();
