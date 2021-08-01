@@ -18,20 +18,39 @@ let yVelocity = 0;
 let foodX = 5;
 let foodY = 5;
 let snakeSegments = [];
-let snakeLength = 2;
+let snakeLength = 0;
 let score = 0;
 
 function makeGame() {
     moveSnake();
+
     let result = isGameOver();
     if(result) {
         return;
     }
+
     clearBoard();
     checkFoodCollision();
     drawFood();
     drawSnake();
     addScore();
+
+    if(score > 10) {
+        snakeSpeed = 10;
+    }
+    if(score > 20) {
+        snakeSpeed = 15;
+    }
+    if(score > 30) {
+        snakeSpeed = 20;
+    }
+    if(score > 40) {
+        snakeSpeed = 25;
+    }
+    if(score > 50) {
+        snakeSpeed = 30;
+    }
+
     setTimeout(makeGame, 1000 / snakeSpeed);
 }
 
@@ -50,6 +69,17 @@ function isGameOver() {
     else if(headY >= tileCount) {
         gameOver=true;
     }
+
+    for(let i = 0; i < snakeSegments.length; i++) {
+        let part = snakeSegments[i];
+        if(part.x === headX && part.y == headY) {
+            gameOver = true;
+            break;
+        }
+    }
+
+
+
     if(gameOver) {
         ctx.fillStyle = 'yellow';
         ctx.font = '65px Anton';
