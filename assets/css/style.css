@@ -29,16 +29,26 @@
 
 }
 
-#game-area {    
-    border-radius: 25px;
-    padding: 20px;
-    width: 50%;
-    height: 100%;
+/*#game-area {    
+    padding: 20px;*/
+    /*width: 50%;
+    height: 100%;*/
+    /*width: 500px;
+    height: 500px;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
+    background-color: #22718F;
+}*/
+
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 500px;
+    height: 500px;
     background-color: #22718F;
 }
 
@@ -53,7 +63,5 @@ footer p {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
 }
 
