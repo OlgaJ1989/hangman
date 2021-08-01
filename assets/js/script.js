@@ -7,12 +7,15 @@ let headX = 10;
 let headY = 10;
 let xVelocity = 0;
 let yVelocity = 0;
-let foodX;
-let foodY;
+let foodX = 5;
+let foodY = 5;
 
 function makeGame() {
     clearBoard();
     moveSnake();
+
+    checkFoodCollision();
+    drawFood();
     drawSnake();
     setTimeout(makeGame, 1000 / snakeSpeed);
 }
@@ -23,8 +26,20 @@ function clearBoard() {
 }
 
 function drawSnake() {
-    ctx.fillStyle = '#7AAFC6';
+    ctx.fillStyle = '#00ff99';
     ctx.fillRect(headX * tileCount + 1, headY * tileCount + 1, tileSize, tileSize);
+}
+
+function drawFood() {
+    ctx.fillStyle = '#ff6666';
+    ctx.fillRect(foodX * tileCount + 1, foodY * tileCount + 1, tileSize, tileSize);
+}
+
+function checkFoodCollision() {
+    if(foodX === headX && foodY === headY) {
+        foodX = Math.floor(Math.random() * tileCount);
+        foodY = Math.floor(Math.random() * tileCount);
+    }
 }
 
 function moveSnake() {
