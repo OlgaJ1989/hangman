@@ -1,7 +1,6 @@
 let canvas = document.getElementById('game-area');
 let ctx = canvas.getContext('2d');
 
-
 class SnakeSegment {
     constructor(x, y) {
         this.x = x;
@@ -20,15 +19,22 @@ let foodX = 5;
 let foodY = 5;
 let snakeSegments = [];
 let snakeLength = 2;
+let score = 0;
 
 function makeGame() {
-    clearBoard();
     moveSnake();
-
+    clearBoard();
     checkFoodCollision();
     drawFood();
     drawSnake();
+    addScore();
     setTimeout(makeGame, 1000 / snakeSpeed);
+}
+
+function addScore() {
+    ctx.fillStyle = '#7AAFC6';
+    ctx.font = '20px Anton';
+    ctx.fillText('Score ' + score, canvas.width - 80, 20)
 }
 
 function clearBoard() {
@@ -37,15 +43,15 @@ function clearBoard() {
 }
 
 function drawSnake() {
-    
+
     ctx.fillStyle = '#66ffcc';
-    for(let i = 0; i < snakeSegments.length; i++) {
+    for (let i = 0; i < snakeSegments.length; i++) {
         let segment = snakeSegments[i];
         ctx.fillRect(segment.x * tileCount + 1, segment.y * tileCount + 1, tileSize, tileSize);
     }
 
     snakeSegments.push(new SnakeSegment(headX, headY));
-    if(snakeSegments.length > snakeLength) {
+    if (snakeSegments.length > snakeLength) {
         snakeSegments.shift();
     }
 
@@ -60,10 +66,11 @@ function drawFood() {
 }
 
 function checkFoodCollision() {
-    if(foodX === headX && foodY === headY) {
+    if (foodX === headX && foodY === headY) {
         foodX = Math.floor(Math.random() * tileCount);
         foodY = Math.floor(Math.random() * tileCount);
         snakeLength++;
+        score++;
     }
 }
 
