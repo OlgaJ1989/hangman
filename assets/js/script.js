@@ -35,8 +35,6 @@ function makeGame() {
     drawSnake();
     addScore();
 
-
-
 /*
     if(score > 10) {
         snakeSpeed = 10;
@@ -81,8 +79,6 @@ function isGameOver() {
             break;
         }
     }
-
-
 
     if(gameOver) {
         ctx.fillStyle = 'yellow';
