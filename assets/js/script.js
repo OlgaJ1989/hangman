@@ -35,13 +35,9 @@ function makeGame() {
     drawSnake();
     addScore();
 
-/*
-if (score % 10 = 0)
-{
-    snakeSpeed += 5;
-}
-*/
 
+
+/*
     if(score > 10) {
         snakeSpeed = 10;
     }
@@ -57,6 +53,7 @@ if (score % 10 = 0)
     if(score > 50) {
         snakeSpeed = 30;
     }
+    */
 
     setTimeout(makeGame, 1000 / snakeSpeed);
 }
@@ -135,6 +132,9 @@ function checkFoodCollision() {
         foodY = Math.floor(Math.random() * tileCount);
         snakeLength++;
         score++;
+        if (score % 5 == 0 ) {
+            snakeSpeed += 2;
+        }
     }
 }
 
