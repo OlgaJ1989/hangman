@@ -37,14 +37,20 @@ function makeGame() {
 
     setTimeout(makeGame, 1000 / snakeSpeed);
 }
-
+//The start button that loads instructions when clicked
 window.onload = function() {
     let startGame = document.getElementById('startButton');
-
     startGame.onclick = function() {
         alert('Use the arrow keys on your keyboard to get the snake moving!');
     }
 }
+
+//Function preventing screen scrolling when arrows are pressed to move the snake
+window.addEventListener("keydown", function(e) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 function isGameOver() {
     let gameOver = false;
@@ -133,29 +139,29 @@ document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
     
-    //up
-    if (event.keyCode == 38) {
+    //Move snake up
+    if (event.key == 'ArrowUp') {
         if (yVelocity == 1)
             return;
         yVelocity = -1;
         xVelocity = 0;
     }
-    //right
-    if (event.keyCode == 39) {
+    //Move snake right
+    if (event.key == 'ArrowRight') {
         if (xVelocity == -1)
             return;
         yVelocity = 0;
         xVelocity = 1;
     }
-    //left
-    if (event.keyCode == 37) {
+    //Move snake left
+    if (event.key == 'ArrowLeft') {
         if (xVelocity == 1)
             return;
         yVelocity = 0;
         xVelocity = -1;
     }
     //down
-    if (event.keyCode == 40) {
+    if (event.key == 'ArrowDown') {
         if (yVelocity == -1)
             return;
         yVelocity = 1;

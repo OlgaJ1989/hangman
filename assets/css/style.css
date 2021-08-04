@@ -11,7 +11,7 @@
     background-color: #22718F;
     font-family: Anton, sans-serif;
     font-size: 200%;
-    color: #7AAFC6;
+    color: white;
     letter-spacing: 6px;
     height: auto;
     width: 100%;
@@ -21,7 +21,7 @@
 }
 
 #main-area {
-    padding-top: 45px;
+    padding-top: 30px;
     padding-bottom: 45px;
     background-color: #7AAFC6;
     height: auto;
@@ -40,7 +40,6 @@ footer {
     background-color: #22718F;
     font-family: Anton, sans-serif;
     font-size: 200%;
-    color: #7AAFC6;
     letter-spacing: 6px;
     height: auto;
     width: 100%;
@@ -48,3 +47,20 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+#start-button {
+    text-align: center;
+    background-color: #7AAFC6;
+    padding-top: 30px;
+}
+
+@keyframes flash {
+    0% { opacity: .3; }
+    100% { opacity: 1; }
+   }
+
+   .flash:hover {
+    opacity: 1;
+    -webkit-animation: flash 1s;
+    animation: flash 3s;
+   }
