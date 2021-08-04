@@ -54,7 +54,7 @@ window.addEventListener("keydown", function(e) {
 
 function isGameOver() {
     let gameOver = false;
-    //walls
+    //Define what happens when snake hits any of the walls
     if(headX < 0) {
         gameOver = true;
     }
