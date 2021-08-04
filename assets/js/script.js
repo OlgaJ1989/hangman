@@ -1,13 +1,6 @@
 let canvas = document.getElementById('game-area');
 let ctx = canvas.getContext('2d');
 
-class SnakeSegment {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 let snakeSpeed = 5;
 let tileCount = 20;
 let tileSize = canvas.width / tileCount - 2;
@@ -20,6 +13,13 @@ let foodY = 5;
 let snakeSegments = [];
 let snakeLength = 0;
 let score = 0;
+
+class SnakeSegment {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
 function makeGame() {
     moveSnake();
@@ -35,25 +35,15 @@ function makeGame() {
     drawSnake();
     addScore();
 
-/*
-    if(score > 10) {
-        snakeSpeed = 10;
-    }
-    if(score > 20) {
-        snakeSpeed = 15;
-    }
-    if(score > 30) {
-        snakeSpeed = 20;
-    }
-    if(score > 40) {
-        snakeSpeed = 25;
-    }
-    if(score > 50) {
-        snakeSpeed = 30;
-    }
-    */
-
     setTimeout(makeGame, 1000 / snakeSpeed);
+}
+
+window.onload = function() {
+    let startGame = document.getElementById('startButton');
+
+    startGame.onclick = function() {
+        alert('Use the arrow keys on your keyboard to get the snake moving!');
+    }
 }
 
 function isGameOver() {
@@ -92,7 +82,7 @@ function addScore() {
     ctx.fillStyle = '#7AAFC6';
     ctx.font = '20px Anton';
     ctx.fillText('Score ' + score, canvas.width - 80, 20)
-}
+    }
 
 function clearBoard() {
     ctx.fillStyle = '#22718F';
@@ -128,7 +118,7 @@ function checkFoodCollision() {
         foodY = Math.floor(Math.random() * tileCount);
         snakeLength++;
         score++;
-        if (score % 5 == 0 ) {
+        if (score % 10 == 0 ) {
             snakeSpeed += 2;
         }
     }
@@ -137,7 +127,6 @@ function checkFoodCollision() {
 function moveSnake() {
     headX = headX + xVelocity;
     headY = headY + yVelocity;
-    
 }
 
 document.body.addEventListener('keydown', keyDown);
@@ -150,7 +139,6 @@ function keyDown(event) {
             return;
         yVelocity = -1;
         xVelocity = 0;
-        keyYes = 0;
     }
     //right
     if (event.keyCode == 39) {
@@ -158,7 +146,6 @@ function keyDown(event) {
             return;
         yVelocity = 0;
         xVelocity = 1;
-        keyYes = 0;
     }
     //left
     if (event.keyCode == 37) {
@@ -166,7 +153,6 @@ function keyDown(event) {
             return;
         yVelocity = 0;
         xVelocity = -1;
-        keyYes = 0;
     }
     //down
     if (event.keyCode == 40) {
@@ -174,7 +160,6 @@ function keyDown(event) {
             return;
         yVelocity = 1;
         xVelocity = 0;
-        keyYes = 0;
     }
 
 }
