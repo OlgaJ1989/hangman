@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,26 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Snake</title>
 </head>
+
 <body class="body">
     <header id="game-title">
         <h1>Snake</h1>
     </header>
+    <!--<div id="start-button">
+        <img id="startButton" class="flash" src="./assets/images/start-button.png" />        
+    </div>-->
+
     <div id="start-button">
-        <img id="startButton" class="flash" src="./assets/images/start-button.png" />
+        <button id="startButton">Start Game</button>
     </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Press any of the arrow keys to start the game.<br><br> Have fun!</p>
+        </div>
+    </div>
+    
+
     <main id="main-area">
         <canvas id="game-area" width="400" height="400"></canvas>
     </main>
@@ -25,4 +39,5 @@
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

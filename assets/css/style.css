@@ -12,7 +12,7 @@
     font-family: Anton, sans-serif;
     font-size: 200%;
     color: white;
-    letter-spacing: 6px;
+    letter-spacing: 20px;
     height: auto;
     width: 100%;
     text-align: center;
@@ -48,7 +48,7 @@ footer {
     padding-bottom: 10px;
 }
 
-#start-button {
+/*#start-button {
     text-align: center;
     background-color: #7AAFC6;
     padding-top: 30px;
@@ -63,4 +63,65 @@ footer {
     opacity: 1;
     -webkit-animation: flash 1s;
     animation: flash 3s;
-   }
+   }*/
+
+
+.modal {
+    display: none; /* Hidden by default */
+    z-index: 1; /* Sit on top */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #7AAFC6; /* Fallback color */
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    margin-left: -150px;
+    margin-top: -150px;
+    border-radius: 25px;
+    border: 3px solid white;
+}
+ 
+  
+.modal-content {
+    background-color: #7AAFC6;
+    font-family: Anton, sans-serif;
+    font-size: 22px;
+    color: black;
+    letter-spacing: 4px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+  }
+  
+.close {
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+#start-button {
+    text-align: center;
+    background-color: #7AAFC6;
+    padding-top: 25px;
+}
+
+#startButton {
+    border-radius: 12px;
+    padding: 10px 24px;
+    background-color: #22718F;
+    color: white;
+}
+
+#startButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

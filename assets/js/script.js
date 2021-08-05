@@ -37,6 +37,7 @@ function makeGame() {
 
     setTimeout(makeGame, 1000 / snakeSpeed);
 }
+/*
 //The start button that loads instructions when clicked
 window.onload = function() {
     let startGame = document.getElementById('startButton');
@@ -44,13 +45,7 @@ window.onload = function() {
         alert('Use the arrow keys on your keyboard to get the snake moving!');
     }
 }
-
-//Function preventing screen scrolling when arrows are pressed to move the snake
-window.addEventListener("keydown", function(e) {
-    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
-        e.preventDefault();
-    }
-}, false);
+*/
 
 function isGameOver() {
     let gameOver = false;
@@ -168,6 +163,37 @@ function keyDown(event) {
         xVelocity = 0;
     }
 
+//Function preventing screen scrolling when arrows are pressed to move the snake
+window.addEventListener("keydown", function(e) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);}
+
+// Get the modal
+let modal = document.getElementById("modal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("startButton");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 makeGame();
