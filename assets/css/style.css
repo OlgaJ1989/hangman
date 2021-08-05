@@ -12,7 +12,7 @@
     font-family: Anton, sans-serif;
     font-size: 200%;
     color: white;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     height: auto;
     width: 100%;
     text-align: center;
@@ -22,7 +22,7 @@
 
 #main-area {
     padding-top: 30px;
-    padding-bottom: 45px;
+    padding-bottom: 25px;
     background-color: #7AAFC6;
     height: auto;
     width: 100%;
@@ -47,24 +47,6 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-/*#start-button {
-    text-align: center;
-    background-color: #7AAFC6;
-    padding-top: 30px;
-}
-
-@keyframes flash {
-    0% { opacity: .3; }
-    100% { opacity: 1; }
-   }
-
-   .flash:hover {
-    opacity: 1;
-    -webkit-animation: flash 1s;
-    animation: flash 3s;
-   }*/
-
 
 .modal {
     display: none; /* Hidden by default */
@@ -115,13 +97,19 @@ footer {
     padding-top: 25px;
 }
 
-#startButton {
+#startButton, #restartButton {
     border-radius: 12px;
     padding: 10px 24px;
     background-color: #22718F;
     color: white;
 }
 
-#startButton:hover {
+#restart {
+    text-align: center;
+    background-color: #7AAFC6;
+    padding-bottom: 30px;
+}
+
+#startButton:hover, #restartButton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
