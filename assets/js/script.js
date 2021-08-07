@@ -159,6 +159,23 @@ function keyDown(e) {
     }
 }
 
+/*
+document.getElementById('mobile-down').onclick = function() {goDown(e)}
+function goDown(e) {
+    if (e.onclick == 'mobile-down')
+    yVelocity = 1;
+    zVelocity = 0;
+}
+
+function down() {
+    if(yVelocity === 0) 
+    return;
+    yVelocity = 1;
+    xVelocity = 0;
+    
+  }
+*/
+
 //Prevent default screen scrolling when up and down arrows are pressed 
 window.addEventListener("keydown", function(e) {
     if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
