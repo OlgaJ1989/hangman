@@ -49,10 +49,10 @@ footer {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    z-index: 1; /* Sit on top */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #7AAFC6; /* Fallback color */
+    display: none; 
+    z-index: 1; 
+    overflow: auto; 
+    background-color: #7AAFC6; 
     width: 300px;
     height: 300px;
     position: absolute;

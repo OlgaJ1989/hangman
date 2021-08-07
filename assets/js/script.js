@@ -127,43 +127,44 @@ function moveSnake() {
 
 document.body.addEventListener('keydown', keyDown);
 
-function keyDown(event) {
+function keyDown(e) {
     
     //Move snake up
-    if (event.key == 'ArrowUp') {
+    if (e.key == 'ArrowUp') {
         if (yVelocity == 1)
             return;
         yVelocity = -1;
         xVelocity = 0;
     }
     //Move snake right
-    if (event.key == 'ArrowRight') {
+    if (e.key == 'ArrowRight') {
         if (xVelocity == -1)
             return;
         yVelocity = 0;
         xVelocity = 1;
     }
     //Move snake left
-    if (event.key == 'ArrowLeft') {
+    if (e.key == 'ArrowLeft') {
         if (xVelocity == 1)
             return;
         yVelocity = 0;
         xVelocity = -1;
     }
     //Move snake down 
-    if (event.key == 'ArrowDown') {
+    if (e.key == 'ArrowDown') {
         if (yVelocity == -1)
             return;
         yVelocity = 1;
         xVelocity = 0;
     }
+}
 
-//Prevent dafault screen scrolling when up and down arrows are pressed 
+//Prevent default screen scrolling when up and down arrows are pressed 
 window.addEventListener("keydown", function(e) {
     if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
         e.preventDefault();
     }
-}, false);}
+}, false);
 
 // Open the modal when Start Game button clicked 
 button.onclick = function() {
