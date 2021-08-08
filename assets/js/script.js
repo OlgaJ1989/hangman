@@ -57,7 +57,7 @@ function isGameOver() {
     else if(headY >= tileCount) {
         gameOver=true;
     }
-
+    //Define what happens to snake when it collides with itself
     for(let i = 0; i < snakeSegments.length; i++) {
         let part = snakeSegments[i];
         if(part.x === headX && part.y == headY) {
